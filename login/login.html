@@ -1,0 +1,43 @@
+<div ng-controller="AppCtrl" ng-cloak>
+    <md-content>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <a ng-href="/">
+                <md-button aria-label="Go Back">
+                    Home
+                </md-button>
+                </a>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+    </md-content>
+</div>
+
+<md-content layout="column" layout-align="center center">
+    <md-input-container flex>
+        <label>Email</label>
+        <input ng-model="email">
+    </md-input-container>
+    <br>
+    <md-input-container flex>
+        <label>Password</label>
+        <input ng-model="pass">
+    </md-input-container>
+    <br>
+    <md-content layout="row" layout-align="center center">
+
+        <div ng-controller="AppCtrl" class="md-padding" id="popupContainer" ng-cloak>
+            <div class="dialog-demo-content" layout="row" layout-wrap layout-margin>
+                <md-button class="md-primary md-raised" ng-click="showAlert($event)" flex-gt-md="auto">
+                    Login
+                </md-button>
+            </div></div>
+
+        <md-button class="md-raised md-primary">Register</md-button>
+    </md-content>
+</md-content>
+
+
+<br><br><br><br><br>
+
+

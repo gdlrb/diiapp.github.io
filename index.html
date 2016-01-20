@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="diApp">
+<html lang="en" class="ng-scope" ng-app="diApp">
 <head>
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.7.0/angular-material.min.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="css/diapp.css">
 
     <meta charset="UTF-8">
     <title>Title</title>
-
+    <base href="/" />
 </head>
 <body>
 
 <div ng-view></div>
-
-
-
 
 
 
@@ -25,6 +23,7 @@
 <script src="bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
 <script src="js/appAngular.js"></script>
 </body>
 </html>
