@@ -14,26 +14,84 @@
 </div>
 
 
-<div ng-cloak>
+<div ng-cloak ng-controller="AppCtrl">
     <md-content>
         <md-tabs md-dynamic-height md-border-bottom>
             <md-tab label="Add article">
                 <md-content class="md-padding">
-                    <h1 class="md-display-2">Add article</h1>
-                        <p>
+                    <h1 class="md-display-2"></h1>
 
-                        </p>
+                    <div ng-controller="MyController">
+
+                        <form ng-submit="addArticle()"/>
+
+                        <div>
+                            <md-input-container>
+                                <label>Number</label>
+                                <input ng-model="id">
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Title</label>
+                                <input ng-model="title">
+                            </md-input-container>
+                        </div>
+                        <md-input-container class="md-block">
+
+                            <label>Description</label>
+                            <textarea ng-model-options="{ debounce: 500 }" ng-model="text"></textarea>
+
+                        </md-input-container>
+
+                        <input class="btn btn-default" type="submit" value="Add article"/>
+
+
+                    </div>
+
                 </md-content>
             </md-tab>
             <md-tab label="All articles">
                 <md-content class="md-padding">
-                    <h1 class="md-display-2">All articles</h1>
-                        <p>
+                    <h1 class="md-display-2"></h1>
 
-                        </p>
+                    <div ng-controller="MyController">
+
+                        <md-list>
+                            <md-item ng-repeat="article in Articles">
+                                <md-item-content class="md-whiteframe-1dp" flex="100">
+
+                                    <md-whiteframe class="md-whiteframe-1dp" layout layout-align="center center">
+                                    <div layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;" ng-cloak>
+
+
+                                    <md-content flex layout-padding>
+                                    <div class="md-tile-content">
+                                        <h3>{{article.id}} - {{article.title}}</h3>
+                                        <p>
+                                            {{article.text}}
+                                        </p>
+                                    </div>
+
+                                    </md-content>
+
+
+
+
+                                    </md-whiteframe>
+
+                                    </div>
+                    <md-button ng-click="deleteArticle(article)" class="md-raised md-warn">Delete</md-button>
+
+
+                                </md-item-content>
+                            </md-item>
+                        </md-list>
+                    </div>
+
                 </md-content>
             </md-tab>
         </md-tabs>
     </md-content>
 </div>
+
+
 

@@ -6,12 +6,47 @@
                     <span>Home page</span>
                 </h2>
                 <span flex></span>
-                <a ng-href="/login">
+                <a ng-href="/admin">
                 <md-button class="md-raised" aria-label="Learn More">
-                    Login
+                    Add article
                 </md-button>
                 </a>
             </div>
         </md-toolbar>
     </md-content>
+</div>
+
+
+<div ng-controller="MyController">
+<div ng-controller="paginationCtrl">
+
+
+
+        <div ng-repeat="article in Articles | startFrom: startingItem() | limitTo: itemsPerPage">
+            <div layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;" ng-cloak>
+
+                    <md-whiteframe class="md-whiteframe-1dp" flex="100" layout layout-align="center center">
+
+                    <md-content flex layout-padding>
+                        <div class="md-tile-content">
+                            <a ng-href="/pages/{{article.id}}">
+                    {{article.id}}: {{article.title}}
+                            </a>
+                        </div>
+                    </md-content>
+
+                    </md-whiteframe>
+
+            </div>
+        </div>
+
+
+
+        <div id="pagination">
+            <button class="btn btn-default" ng-disabled="firstPage()" ng-click="pageBack()">Prev</button>
+            <span>{{currentPage+1}} из {{numberOfPages()}}</span>
+            <button class="btn btn-default" ng-disabled="lastPage()" ng-click="pageForward()">Next</button>
+        </div>
+
+</div>
 </div>
